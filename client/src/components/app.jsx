@@ -5,7 +5,8 @@ import ViewAll from './pages/viewAll';
 import PrivateRoute from './auth/privateRoute';
 import Login from './auth/login';
 import Logout from './auth/logout';
-import Navbar from './nav/navbar';
+//import Navbar from './nav/navbar';
+import Sidenav from './tools/home-sidenav';
 
 export default class App extends Component {
     checkedLogin() {
@@ -24,7 +25,7 @@ export default class App extends Component {
         return (
             <Router>
                 <Fragment>
-                    <Navbar/>
+                    <Sidenav />
                     <Switch>
                         <Route exact path="/" component={Home} />
                         <Route path="/login" component={Login} />

@@ -9,7 +9,6 @@ class Home extends Component {
   render() {
     return (
       <div className="home-container">
-          <Sidenav />
           <div className="home-sector">
             <Carousel />
             <div data-spy="scroll" data-target="#list-example" data-offset="0" className="scrollspy-example">
@@ -19,29 +18,19 @@ class Home extends Component {
                   <p>Whether sharing your expertise, breaking news, or whatever’s on your mind, you’re in good company on Blogger. Sign up to discover why millions of people have published their passions here.</p>
                 </div>
               </div>
-              <div className="home-section-2" id="list-item-2" style={{ height: '450px', background: '#F63F39' }}>
+              <div className="home-section-2" id="list-item-2" style={{ height: '450px', background: 'white' }}>
                 <div style={{ width: '50%', textAlign: 'center', position: 'relative', margin: '0 auto', top: '8rem' }}>
                   <h3>Join millions of others</h3>
                   <p>Whether sharing your expertise, breaking news, or whatever’s on your mind, you’re in good company on Blogger. Sign up to discover why millions of people have published their passions here.</p>
                 </div>
               </div>
-              <div className="home-section-3" id="list-item-3" style={{ height: '450px', background: '#F69E39' }}>
+              <div className="home-section-3" id="list-item-3" style={{ height: '450px', background: '#1d2b34', color: 'white' }}>
                 <div style={{ width: '50%', textAlign: 'center', position: 'relative', margin: '0 auto', top: '8rem' }}>
                   <h3>Join millions of others</h3>
                   <p>Whether sharing your expertise, breaking news, or whatever’s on your mind, you’re in good company on Blogger. Sign up to discover why millions of people have published their passions here.</p>
-                </div>
-              </div>
-              <div className="home-section-4" id="list-item-4" style={{ height: '450px', background: '#53B99A' }}>
-                <div style={{ width: '50%', textAlign: 'center', position: 'relative', margin: '0 auto', top: '8rem' }}>
-                  <h3>Join millions of others</h3>
-                  <p>Whether sharing your expertise, breaking news, or whatever’s on your mind, you’re in good company on Blogger. Sign up to discover why millions of people have published their passions here.</p>
-                  <span style={{ padding: '10px', background: '#1d2b34' }}><Link to='/view-all' style={{ color: 'white' }}>Create Your Blog!</Link></span>
-                </div>
-              </div>
-              <div className="home-section-5" id="list-item-5" style={{ height: '450px', background: '#1d2b34', color: 'white' }}>
-                <div style={{ width: '50%', textAlign: 'center', position: 'relative', margin: '0 auto', top: '8rem' }}>
-                  <h3>Join millions of others</h3>
-                  <p>Whether sharing your expertise, breaking news, or whatever’s on your mind, you’re in good company on Blogger. Sign up to discover why millions of people have published their passions here.</p>
+                  <br/>
+                  <br/>
+                  <a href="" style={{ padding: '15px', background: 'lightgrey', borderRadius: '50%', color: 'black' }}>Sign Up</a>
                 </div>
               </div>
             </div>

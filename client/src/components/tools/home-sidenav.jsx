@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom';
+import AuthButton from '../auth/authButton';
 
 export default class Sidenav extends Component {
     constructor(props) {
@@ -19,12 +21,11 @@ export default class Sidenav extends Component {
         if (this.state.isSidenav) {
             return (
                 <div id="list-example" className="list-group" style={{ height: '100%', width: '200px', position: 'fixed', zIndex: '1', top: '0px', left: '0', overflowX: 'hidden', padding: '20px 20px', background: '#1d2b34' }}>
-                    <a className="list-group-item list-group-item-action" href="#carouselExampleControls">Top</a>
-                    <a className="list-group-item list-group-item-action" href="#list-item-1">Item 1</a>
-                    <a className="list-group-item list-group-item-action" href="#list-item-2">Item 2</a>
-                    <a className="list-group-item list-group-item-action" href="#list-item-3">Item 3</a>
-                    <a className="list-group-item list-group-item-action" href="#list-item-4">Item 4</a>
-                    <a className="list-group-item list-group-item-action" href="#list-item-5">Contact</a>
+                    <span className="list-group-item list-group-item-action"><Link to="/">Home</Link></span>
+                    <a className="list-group-item list-group-item-action" href="#list-item-1">About</a>
+                    <span className="list-group-item list-group-item-action"><Link to="/view-all">View All</Link></span>
+                    <a className="list-group-item list-group-item-action" href="#list-item-3">Contact Us</a>
+                    <span className="list-group-item list-group-item-action"><AuthButton /></span>
                     <br />
                     <a className="list-group-item list-group-item-action" onClick={() => {
                         this.showSidenav();
@@ -35,11 +36,11 @@ export default class Sidenav extends Component {
             return (
                 <button
                     className="btn-show-sidenav d-flex m-3"
-                    style={{ position: 'fixed', zIndex: '1', top: '56px', left: '0', overflowX: 'hidden', padding: '10px' }}
+                    style={{ position: 'fixed', zIndex: '1', top: '6px', left: '0', overflowX: 'hidden', padding: '10px' }}
                     onClick={() => {
                         this.showSidenav();
                     }}
-                >Expand
+                >LOGO
                 </button>
             )
         }
