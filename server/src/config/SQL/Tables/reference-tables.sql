@@ -11,6 +11,7 @@ create table Posts (
     id int not null auto_increment primary key,
     userid int not null,
     content text not null,
+    title text not null,
     _created datetime default current_timestamp
 );
 -- -- POST-TAGS

@@ -24,11 +24,12 @@ export function read(req, res, next) {
 }
 
 export function create(req, res, next) {
-    let { userid, content } = req.body;
+    let { userid, content, title } = req.body;
 
     PostValidators.create({
         userid,
         content,
+        title,
     }).then((sqlArgs) => {
         return PostProcedures.create(sqlArgs);
     }).then((post) => {
@@ -40,12 +41,13 @@ export function create(req, res, next) {
 
 export function update(req, res, next) {
     let { id } = req.params;
-    let { userid, content } = req.body;
+    let { userid, content, title } = req.body;
 
     PostValidators.update({
         id,
         userid,
         content,
+        title,
     }).then((sqlArgs) => {
         return PostProcedures.update(sqlArgs);
     }).then((post) => {

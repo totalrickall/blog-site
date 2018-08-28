@@ -5,8 +5,16 @@ delimiter $$
 create procedure spAllPosts()
 begin
 
-select *
-from Posts;
+select 
+	p.id,
+    p.userid,
+    p.content,
+    p.title,
+    u.email,
+    u.firstname,
+    u.lastname
+from Posts p
+join Users u on p.userid = u.id;
 
 end $$
 delimiter ;
@@ -16,20 +24,28 @@ delimiter $$
 create procedure spReadPost(in p_id int)
 begin
 
-select *
-from Posts
-where id = p_id;
+select 
+	p.id,
+    p.userid,
+    p.content,
+    p.title,
+    u.email,
+    u.firstname,
+    u.lastname
+from Posts p
+join Users u on p.userid = u.id
+where p.id = p_id;
 
 end $$
 delimiter ;
 -- CREATE
 drop procedure if exists spCreatePost;
 delimiter $$
-create procedure spCreatePost(in p_userid int, in p_content text)
+create procedure spCreatePost(in p_userid int, in p_content text, in p_title text)
 begin 
 
-insert into Posts(userid, content)
-values(p_userid, p_content);
+insert into Posts(userid, content, title)
+values(p_userid, p_content, p_title);
 select last_insert_id() as id;
 
 end $$
@@ -37,13 +53,14 @@ delimiter ;
 -- UPDATE
 drop procedure if exists spUpdatePost;
 delimiter $$
-create procedure spUpdatePost(in p_id int, in p_userid int, in p_content text)
+create procedure spUpdatePost(in p_id int, in p_userid int, in p_content text, in p_title text)
 begin
 
 update Posts
 set
     userid= coalesce(p_userid, userid),
-    content= coalesce(p_content, content)
+    content= coalesce(p_content, content),
+    title= coalesce(p_title, title)
 where id = p_id;
 
 end $$
@@ -69,6 +86,7 @@ select
 	p.id,
     p.userid,
     p.content,
+    p.title,
     pt.tagid,
     t.name
 from Posts p

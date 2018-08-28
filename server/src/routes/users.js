@@ -5,13 +5,13 @@ import * as Users from '../controllers/users.ctrl';
 let router = Router();
 
 router
-    .get('/', Users.all)
-    .get('/:id', Users.read)
+    .get('/', tokenMiddleware, isLoggedIn, Users.all)
     .get('/me', tokenMiddleware, isLoggedIn, (req, res) => {
         res.json(req.user);
     })
-    .post('/', Users.create)
-    .put('/:id', Users.update)
-    .delete('/:id', Users.destroy);
+    .get('/:id', tokenMiddleware, isLoggedIn, Users.read)
+    .post('/', tokenMiddleware, isLoggedIn, Users.create)
+    .put('/:id', tokenMiddleware, isLoggedIn, Users.update)
+    .delete('/:id', tokenMiddleware, isLoggedIn, Users.destroy);
 
-export default router; 
+export default router;

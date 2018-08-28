@@ -20,7 +20,7 @@ export function read(args) {
 
 export function create(args) {
     let userid = +args.userid;
-    let { content } = args;
+    let { content, title } = args;
 
     return new Promise((resolve, reject) => {
         // USERID
@@ -29,19 +29,19 @@ export function create(args) {
             return;
         }
         // CONTENT
-        if (!(lodash.isString(content))) {
-            reject(new Error('Content must be alphanumeric characters.'));
+        if (!(lodash.isString(content, title))) {
+            reject(new Error('Content or title must be alphanumeric characters.'));
             return;
         }
 
-        resolve([userid, content]);
+        resolve([userid, content, title]);
     })
 };
 
 export function update(args) {
     let id = +args.id;
     let userid = +args.userid;
-    let { content } = args;
+    let { content, title } = args;
 
     return new Promise((resolve, reject) => {
         // ID & USERID
@@ -50,12 +50,12 @@ export function update(args) {
             return;
         }
         // CONTENT
-        if (!(lodash.isString(content))) {
-            reject(new Error('Content must be alphanumeric characters.'));
+        if (!(lodash.isString(content, title))) {
+            reject(new Error('Content or title must be alphanumeric characters.'));
             return;
         }
 
-        resolve([id, userid, content]);
+        resolve([id, userid, content, title]);
     })
 };
 

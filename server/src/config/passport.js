@@ -22,7 +22,7 @@ function configurePassport(app) {
                     userid: user.id
                 });
                 let token = encode(idObj.id);
-                console.log(`TOKEN:`, token);
+                console.log(`--- TOKEN HERE ---`, token)
                 return done(null, { token });
             } else {
                 return done(null, false, { message: 'Invalid credentials' });
@@ -34,6 +34,7 @@ function configurePassport(app) {
 
     passport.use(new BearerStrategy(async (token, done) => {
         let tokenId = decode(token);
+        console.log(`--- TOKEN HERE ---`, tokenId)
         if (!tokenId) {
             return done(null, false, { message: 'Invalid token' });
         }
