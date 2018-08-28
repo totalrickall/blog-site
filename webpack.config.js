@@ -18,14 +18,18 @@ module.exports = {
                 }
             },
             {
-                test: /\.(png|jpg|gif)$/,
-                use: {
-                    loader: 'file-loader',
-                    options: {
-                        publicPath: '/dist/images',
-                        outputPath: 'images'
-                    }
-                }
+                test: /\.(jpg|png|svg)$/,
+                loader: 'url-loader',
+                options: {
+                  limit: 25000,
+                },
+            },
+            {
+                test: /\.(jpg|png|svg)$/,
+                loader: 'file-loader',
+                options: {
+                  name: '[path][name].[hash].[ext]',
+                },
             },
             {
                 test: /\.(pdf)$/,
