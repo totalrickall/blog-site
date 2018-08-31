@@ -1,7 +1,7 @@
 import React, { Component, Fragment } from 'react';
 import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom';
 import Home from './pages/home';
-import ViewAll from './pages/viewAll';
+import allPosts from './pages/all-posts';
 import PrivateRoute from './auth/privateRoute';
 import Login from './auth/login';
 import Logout from './auth/logout';
@@ -21,7 +21,8 @@ export default class App extends Component {
           });
         }
     };
-    render() {
+
+    routes() {
         return (
             <Router>
                 <Fragment>
@@ -30,10 +31,15 @@ export default class App extends Component {
                         <Route exact path="/" component={Home} />
                         <Route path="/login" component={Login} />
                         <Route path="/logout" component={Logout} />
-                        <PrivateRoute path="/view-all" component={ViewAll} />
+                        <PrivateRoute path="/view-all" component={allPosts} />
                     </Switch>
                 </Fragment>
             </Router>
+        )
+    };
+    render() {
+        return (
+            this.routes()
         )
     }
 }

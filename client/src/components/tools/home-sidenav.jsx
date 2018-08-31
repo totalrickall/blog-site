@@ -20,28 +20,26 @@ export default class Sidenav extends Component {
     isSidenav() {
         if (this.state.isSidenav) {
             return (
-                <div id="list-example" className="list-group" style={{ height: '100%', width: '200px', position: 'fixed', zIndex: '1', top: '0px', left: '0', overflowX: 'hidden', padding: '20px 20px', background: '#1d2b34' }}>
+                <div id="list-example" className="list-group" style={{ height: '100%', width: '200px', position: 'fixed', zIndex: '1', top: '0px', left: '0', overflowX: 'hidden', padding: '20px 20px', background: '#1d2b34' }} onMouseLeave={() => {
+                    this.showSidenav();
+                }}>
                     <span className="list-group-item list-group-item-action"><Link to="/">Home</Link></span>
                     <a className="list-group-item list-group-item-action" href="#list-item-1">About</a>
                     <span className="list-group-item list-group-item-action"><Link to="/view-all">View All</Link></span>
                     <a className="list-group-item list-group-item-action" href="#list-item-3">Contact Us</a>
                     <span className="list-group-item list-group-item-action"><AuthButton /></span>
-                    <br />
-                    <a className="list-group-item list-group-item-action" onClick={() => {
-                        this.showSidenav();
-                    }}>HIDE</a>
                 </div>
             )
         } else {
             return (
-                <button
+                <img
                     className="btn-show-sidenav d-flex m-3"
-                    style={{ position: 'fixed', zIndex: '1', top: '6px', left: '0', overflowX: 'hidden', padding: '10px' }}
-                    onClick={() => {
+                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTQdeAQBPcAU-xNhbK3OVuzf1cYvSkTEv3OskLD1Whe07SSpNz7"
+                    style={{ position: 'fixed', zIndex: '1', left: '0', overflowX: 'hidden', padding: '10px', weight: '80px', height: '80px', backgroundColor: 'black' }}
+                    onMouseOver={() => {
                         this.showSidenav();
                     }}
-                >LOGO
-                </button>
+                />
             )
         }
     }

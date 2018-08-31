@@ -28,10 +28,12 @@ export default class ViewAll extends Component {
     })
   }
 
-  render() {
+  allPosts() {
     return (
       <div>
-        <h1>View All</h1>
+        <h1 style={{ textAlign: 'center' }}>All Posts</h1>
+        <br/>
+        <br/>
         <div>
           {this.state.postCollection.map((posts) => {
             let { id, userid, content, email, title } = posts;
@@ -47,6 +49,12 @@ export default class ViewAll extends Component {
           })}
         </div>
       </div>
+    )
+  }
+
+  render() {
+    return (
+      this.allPosts()
     )
   }
 };
