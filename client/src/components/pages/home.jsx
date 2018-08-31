@@ -20,6 +20,29 @@ export default class Home extends Component {
       })
   };
 
+  contactLink(description, link) {
+    return <a href={link} target="_blank" style={{ margin: '0 15px', color: 'white' }}>{description}</a>
+  }
+
+  contactInfo() {
+    let homeLink = '/';
+    let twitterLink = 'https://www.twitter.com/'
+    let facebookLink = 'https://www.facebook.com/';
+    let githubLink = 'https://github.com/totalrickall/';
+
+    return (
+      <div className="home-section-4" id="list-item-2" style={{ height: '150px', background: 'black' }}>
+        <div style={{ width: '50%', textAlign: 'center', position: 'relative', margin: '0 auto', top: '2rem' }}>
+          {this.contactLink('(205) 555-5555', null)}
+          {this.contactLink('Test@email.com', null)}
+          {this.contactLink('Twitter', twitterLink)}
+          {this.contactLink('Facebook', facebookLink)}
+          {this.contactLink('Github', githubLink)}
+        </div>
+      </div>
+    )
+  }
+
   homeContent() {
     return (
       <div className="home-container">
@@ -44,9 +67,10 @@ export default class Home extends Component {
                 <p>Whether sharing your expertise, breaking news, or whatever’s on your mind, you’re in good company on Blogger. Sign up to discover why millions of people have published their passions here.</p>
                 <br />
                 <br />
-                <a href="" style={{ padding: '15px', background: 'lightgrey', borderRadius: '50%', color: 'black' }}>Sign Up</a>
+                <a href="/sign-up" style={{ padding: '15px', background: 'lightgrey', borderRadius: '50%', color: 'black' }}>Sign Up</a>
               </div>
             </div>
+            {this.contactInfo()}
           </div>
         </div>
       </div>
