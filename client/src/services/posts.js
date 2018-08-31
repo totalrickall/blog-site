@@ -4,11 +4,11 @@ function all() {
     return baseService.get('/api/posts');
 }
 
-function one(id) {
+function read(id) {
     return baseService.get(`/api/posts/${id}`);
 }
 
-function insert(data) {
+function create(data) {
     return baseService.post('/api/posts', data);
 }
 
@@ -20,4 +20,4 @@ function destroy(id) {
     return baseService.destroy(`/api/posts/${id}`);
 }
 
-export { all, one, insert, update, destroy };
+export { all, read, create, update, destroy };

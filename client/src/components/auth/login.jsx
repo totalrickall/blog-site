@@ -23,7 +23,9 @@ class Login extends Component {
             } else {
                 this.setState({ checkingLogin: false });
             }
-        });
+        }).catch((err) => {
+            console.error(err);
+        })
     }
 
     login(e) {
@@ -60,7 +62,12 @@ class Login extends Component {
        }
 
        return (
-           <Fragment>
+           <div className="login-form">
+               <br/>
+               <br/>
+               <br/>
+               <br/>
+               <br/>
                 <p>You must be logged in to view this page.</p>
                 <form onSubmit={(e) => this.login(e)}>
                     <div className="form-group">
@@ -71,12 +78,13 @@ class Login extends Component {
                         <label htmlFor="password">Password</label>
                         <input id="password" className="form-control" type="password" onChange={(e) => this.handlePasswordChange(e.target.value)} required /> 
                     </div>
+                    <p>New User? Click <span><a href="/sign-up">here</a></span> to register</p>
                     {this.state.feedbackMessage ? (
                         <p>{ this.state.feedbackMessage }</p>
                     ): null}
                     <input type="submit" value="Login" className="btn btn-primary" />
                 </form>
-            </Fragment>
+            </div>
        );
     }
 }

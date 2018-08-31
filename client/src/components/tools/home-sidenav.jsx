@@ -3,8 +3,8 @@ import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom';
 import AuthButton from '../auth/authButton';
 
 export default class Sidenav extends Component {
-    constructor(props) {
-        super(props);
+    constructor() {
+        super();
 
         this.state = {
             isSidenav: false
@@ -17,17 +17,25 @@ export default class Sidenav extends Component {
         })
     }
 
+    customNavLink(link, description) {
+        return (
+            <a className="custom-nav-link" style={{ color: 'white' }} href={link}>{description}</a>
+        )
+    }
+
     isSidenav() {
         if (this.state.isSidenav) {
             return (
                 <div id="list-example" className="list-group" style={{ height: '100%', width: '200px', position: 'fixed', zIndex: '1', top: '0px', left: '0', overflowX: 'hidden', padding: '20px 20px', background: '#1d2b34' }} onMouseLeave={() => {
                     this.showSidenav();
                 }}>
-                    <span className="list-group-item list-group-item-action"><Link to="/">Home</Link></span>
-                    <a className="list-group-item list-group-item-action" href="#list-item-1">About</a>
-                    <span className="list-group-item list-group-item-action"><Link to="/view-all">View All</Link></span>
-                    <a className="list-group-item list-group-item-action" href="#list-item-3">Contact Us</a>
-                    <span className="list-group-item list-group-item-action"><AuthButton /></span>
+                    <h3 style={{ color: 'white' }}>NBA MESSENGER</h3>
+                    <br/>
+                    {this.customNavLink('/', 'Home')}
+                    {this.customNavLink('#list-item-1', 'About')}
+                    {this.customNavLink('/view-all', 'View All Posts')}
+                    {this.customNavLink('#list-item-3', 'Contact Us')}
+                    <AuthButton />
                 </div>
             )
         } else {

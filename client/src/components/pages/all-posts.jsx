@@ -24,6 +24,8 @@ export default class ViewAll extends Component {
             postCollection: [...this.state.postCollection, post]
           })
         })
+      }).catch((err) => {
+        console.error(err);
       })
     })
   }

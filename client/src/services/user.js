@@ -50,8 +50,29 @@ function logout() {
     loggedIn = false;
 }
 
+// use this a lot
 function me() {
     return baseService.get('/api/users/me');
 }
 
-export { isLoggedIn, checkLogin, login, logout, me };
+function all() {
+    return baseService.get('/api/users');
+}
+
+function read(id) {
+    return baseService.get(`/api/users/${id}`);
+}
+
+function create(data) {
+    return baseService.post('/api/users', data);
+}
+
+function update(id, data) {
+    return baseService.put(`/api/users/${id}`, data);
+}
+
+function destroy(id) {
+    return baseService.destroy(`/api/users/${id}`);
+}
+
+export { isLoggedIn, checkLogin, login, logout, me, all, read, create, update, destroy };

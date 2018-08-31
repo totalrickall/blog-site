@@ -3,8 +3,22 @@ import { render } from 'react-dom';
 import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom';
 import Carousel from '../tools/home-carousel';
 import Sidenav from '../tools/home-sidenav';
+import * as userService from '../../services/user';
 
-class Home extends Component {
+export default class Home extends Component {
+
+  componentDidMount() {
+    userService.checkLogin()
+      .then((loggedIn) => {
+        if (loggedIn) {
+          this.setState({ redirectToReferrer: true, checkingLogin: false });
+        } else {
+          this.setState({ checkingLogin: false });
+        }
+      }).catch((err) => {
+        console.error(err);
+      })
+  };
 
   homeContent() {
     return (
@@ -37,13 +51,11 @@ class Home extends Component {
         </div>
       </div>
     )
-  }
+  };
 
   render() {
     return (
       this.homeContent()
     )
-  }
-}
-
-export default Home;
+  };
+};

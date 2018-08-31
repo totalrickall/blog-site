@@ -7,6 +7,7 @@ import Login from './auth/login';
 import Logout from './auth/logout';
 //import Navbar from './nav/navbar';
 import Sidenav from './tools/home-sidenav';
+import SignUp from './auth/signUp';
 
 export default class App extends Component {
     checkedLogin() {
@@ -31,7 +32,8 @@ export default class App extends Component {
                         <Route exact path="/" component={Home} />
                         <Route path="/login" component={Login} />
                         <Route path="/logout" component={Logout} />
-                        <PrivateRoute path="/view-all" component={allPosts} />
+                        <Route exact path="/sign-up" component={SignUp} />
+                        <PrivateRoute exact path="/view-all" component={allPosts} />
                     </Switch>
                 </Fragment>
             </Router>
