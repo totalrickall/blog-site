@@ -4,8 +4,8 @@ function all() {
     return baseService.get(`/api/players`);
 }
 
-function read(id) {
-    return baseService.get(`/api/posts/${id}`);
+function read(playerid) {
+    return baseService.get(`/api/posts/${playerid}`);
 }
 
 function create(data) {

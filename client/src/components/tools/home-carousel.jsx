@@ -4,8 +4,25 @@ export default class Carousel extends Component {
 
   carouselItemActive(link, message, fontColor) {
     return (
-      <div className="carousel-item active" style={{ height: '600px', backgroundImage: link, backgroundSize: '1400px 640px', backgroundRepeat: 'no-repeat', backgroundPosition: 'center center', textAlign: 'center' }}>
-        <div style={{ width: '50%', textAlign: 'center', position: 'relative', margin: '0 auto', top: '8rem', color: fontColor, backgroundColor: 'black', opacity: .8, padding: '20px' }}>
+      <div className="carousel-item active" style={{
+        height: '600px',
+        backgroundImage: link,
+        backgroundSize: '1400px 640px',
+        backgroundRepeat: 'no-repeat',
+        backgroundPosition: 'center center',
+        textAlign: 'center'
+      }}>
+        <div style={{
+          width: '50%',
+          textAlign: 'center',
+          position: 'relative',
+          margin: '0 auto',
+          top: '8rem',
+          color: fontColor,
+          backgroundColor: 'black',
+          opacity: .8,
+          padding: '20px'
+        }}>
           <h1>NBA Messenger</h1>
           <p>{message}</p>
         </div>
@@ -15,8 +32,25 @@ export default class Carousel extends Component {
 
   carouselItem(link, message, fontColor) {
     return (
-      <div className="carousel-item" style={{ height: '600px', backgroundImage: link, backgroundSize: '1400px 640px', backgroundRepeat: 'no-repeat', backgroundPosition: 'center center', textAlign: 'center' }}>
-        <div style={{ width: '50%', textAlign: 'center', position: 'relative', margin: '0 auto', top: '8rem', color: fontColor, backgroundColor: 'black', opacity: .8, padding: '20px' }}>
+      <div className="carousel-item" style={{
+        height: '600px',
+        backgroundImage: link,
+        backgroundSize: '1400px 640px',
+        backgroundRepeat: 'no-repeat',
+        backgroundPosition: 'center center',
+        textAlign: 'center'
+      }}>
+        <div style={{
+          width: '50%',
+          textAlign: 'center',
+          position: 'relative',
+          margin: '0 auto',
+          top: '8rem',
+          color: fontColor,
+          backgroundColor: 'black',
+          opacity: .8,
+          padding: '20px'
+        }}>
           <h1>NBA Messenger</h1>
           <p>{message}</p>
         </div>
