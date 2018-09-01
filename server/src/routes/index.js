@@ -4,6 +4,7 @@ import usersRouter from './users';
 import postsRouter from './posts';
 import tagsRouter from './tags';
 import favoritesRouter from './favorites';
+import playersRouter from './players';
 import { isLoggedIn, tokenMiddleware } from '../middleware/auth.mw';
 
 let router = Router();
@@ -19,5 +20,6 @@ router
     .use('/posts', postsRouter)
     .use('/tags', tagsRouter)
     .use('/favorites', favoritesRouter)
+    .use('/players', playersRouter)
 
 export default router;

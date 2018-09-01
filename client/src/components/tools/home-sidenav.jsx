@@ -23,10 +23,10 @@ export default class Sidenav extends Component {
         )
     }
 
-    isSidenav() {
+    sidenavContent() {
         if (this.state.isSidenav) {
             return (
-                <div id="list-example" className="list-group" style={{ height: '100%', width: '200px', position: 'fixed', zIndex: '1', top: '0px', left: '0', overflowX: 'hidden', padding: '20px 20px', background: '#1d2b34' }} onMouseLeave={() => {
+                <div id="list-example" className="list-group" style={{ height: '100%', width: '200px', position: 'fixed', zIndex: '1', top: '0px', left: '0', overflowX: 'hidden', padding: '20px 20px', background: '#1d2b34', border: '2px solid white' }} onMouseLeave={() => {
                     this.showSidenav();
                 }}>
                     <h3 style={{ color: 'white' }}>NBA MESSENGER</h3>
@@ -53,7 +53,7 @@ export default class Sidenav extends Component {
     }
     render() {
         return (
-            this.isSidenav()
+            this.sidenavContent()
         )
     }
 };
