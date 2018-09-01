@@ -19,11 +19,11 @@ export default class Home extends Component {
       }).catch((err) => {
         console.error(err);
       });
-    //playersService.all().then((data) => {
-    //  console.log(data)
-    //}).catch((err) => {
-    //  console.error(err);
-    //});
+    playersService.all().then((data) => {
+      console.log(data)
+    }).catch((err) => {
+      console.error(err);
+    });
   };
 
   contactLink(description, link) {
