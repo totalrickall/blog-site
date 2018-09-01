@@ -30,9 +30,9 @@ export default class ViewAll extends Component {
     })
   }
 
-  allPosts() {
+  allPostsContent() {
     return (
-      <div>
+      <div className="all-posts-container">
         <h1 style={{ textAlign: 'center' }}>All Posts</h1>
         <br/>
         <br/>
@@ -56,7 +56,7 @@ export default class ViewAll extends Component {
 
   render() {
     return (
-      this.allPosts()
+      this.allPostsContent()
     )
   }
 };

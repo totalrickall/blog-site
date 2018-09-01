@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom';
 import AuthButton from '../auth/authButton';
 
-export default class Sidenav extends Component {
+export default class Nav extends Component {
     constructor() {
         super();
 
@@ -33,6 +33,7 @@ export default class Sidenav extends Component {
                     <br/>
                     {this.customNavLink('/', 'Home')}
                     {this.customNavLink('#list-item-1', 'About')}
+                    {this.customNavLink('/players', 'View Current Players')}
                     {this.customNavLink('/view-all', 'View All Posts')}
                     {this.customNavLink('#list-item-3', 'Contact Us')}
                     <AuthButton />

@@ -2,14 +2,13 @@ import React, { Component } from 'react';
 import { render } from 'react-dom';
 import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom';
 import Carousel from '../tools/home-carousel';
-import Sidenav from '../tools/home-sidenav';
-import * as userService from '../../services/user';
-import * as playersService from '../../services/players';
+import * as UserService from '../../services/user';
+//import * as playersService from '../../services/players';
 
 export default class Home extends Component {
 
   componentDidMount() {
-    userService.checkLogin()
+    UserService.checkLogin()
       .then((loggedIn) => {
         if (loggedIn) {
           this.setState({ redirectToReferrer: true, checkingLogin: false });
@@ -19,11 +18,6 @@ export default class Home extends Component {
       }).catch((err) => {
         console.error(err);
       });
-    playersService.all().then((data) => {
-      console.log(data)
-    }).catch((err) => {
-      console.error(err);
-    });
   };
 
   contactLink(description, link) {

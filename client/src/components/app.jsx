@@ -6,8 +6,9 @@ import PrivateRoute from './auth/privateRoute';
 import Login from './auth/login';
 import Logout from './auth/logout';
 //import Navbar from './nav/navbar';
-import Sidenav from './tools/home-sidenav';
+import Nav from './nav/nav';
 import SignUp from './auth/signUp';
+import nbaPlayers from './pages/nba-players';
 
 export default class App extends Component {
     checkedLogin() {
@@ -27,13 +28,14 @@ export default class App extends Component {
         return (
             <Router>
                 <Fragment>
-                    <Sidenav />
+                    <Nav />
                     <Switch>
                         <Route exact path="/" component={Home} />
                         <Route path="/login" component={Login} />
                         <Route path="/logout" component={Logout} />
                         <Route exact path="/sign-up" component={SignUp} />
                         <PrivateRoute exact path="/view-all" component={allPosts} />
+                        <PrivateRoute exact path="/players" component={nbaPlayers} />
                     </Switch>
                 </Fragment>
             </Router>
