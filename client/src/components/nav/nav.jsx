@@ -30,7 +30,7 @@ export default class Nav extends Component {
 
             let link1 = `/`;
             let link2 = `list-item-1`;
-            let link3 = `/players`;
+            let link3 = `/players/page1/0-100`;
             let link4 = `/view-all`;
             let link5 = `#list-item-3`;
 
@@ -42,21 +42,23 @@ export default class Nav extends Component {
 
             return (
                 <div id="list-example" className="list-group" style={{
-                    height: '100%', 
-                    width: '200px', 
-                    position: 'fixed', 
-                    zIndex: '1', 
-                    top: '0px', 
-                    left: '0', 
-                    overflowX: 'hidden', 
-                    padding: '20px 20px', 
-                    background: '#1d2b34', 
+                    height: '100%',
+                    width: '200px',
+                    position: 'fixed',
+                    zIndex: '1',
+                    top: '0px',
+                    left: '0',
+                    overflowX: 'hidden',
+                    padding: '20px 20px',
+                    background: '#1d2b34',
                     border: '2px solid white'
                 }}
                     onMouseLeave={() => {
                         this.showNav();
                     }}>
-                    <h3 style={{ color: 'white' }}>NBA MESSENGER</h3>
+                    <h3 style={{
+                        color: 'white'
+                    }}>NBA MESSENGER</h3>
                     <br />
                     {this.customNavLink(link1, description1)}
                     {this.customNavLink(link2, description2)}
@@ -68,28 +70,28 @@ export default class Nav extends Component {
             )
         } else {
             return (
-                    <img
-                        className="nav-logo-image d-flex m-3"
-                        src="http://www.stickpng.com/assets/images/5856a5274f6ae202fedf2762.png"
-                        style={{
-                            position: 'fixed',
-                            zIndex: '1',
-                            left: '0',
-                            overflowX: 'hidden',
-                            weight: '80px',
-                            height: '80px',
-                            background: 'transparent',
-                        }}
-                        onMouseOver={() => {
-                            this.showNav();
-                        }}
-                    />
+                <img
+                    className="nav-logo-image d-flex m-3"
+                    src="http://www.stickpng.com/assets/images/5856a5274f6ae202fedf2762.png"
+                    style={{
+                        position: 'fixed',
+                        zIndex: '1',
+                        left: '0',
+                        overflowX: 'hidden',
+                        weight: '80px',
+                        height: '80px',
+                        background: 'transparent',
+                    }}
+                    onMouseOver={() => {
+                        this.showNav();
+                    }}
+                />
             )
         }
-    }
+    };
     render() {
         return (
             this.navContent()
         )
-    }
+    };
 };
