@@ -8,12 +8,7 @@ import Logout from './auth/logout';
 //import Navbar from './nav/navbar';
 import Nav from './nav/nav';
 import SignUp from './auth/signUp';
-import Players1 from './pages/player-set-1';
-import Players2 from './pages/player-set-2';
-import Players3 from './pages/player-set-3';
-import Players4 from './pages/player-set-4';
-import Players5 from './pages/player-set-5';
-import Players6 from './pages/player-set-6';
+import Players from './pages/players';
 
 export default class App extends Component {
     checkedLogin() {
@@ -40,12 +35,7 @@ export default class App extends Component {
                         <Route path="/logout" component={Logout} />
                         <Route exact path="/sign-up" component={SignUp} />
                         <PrivateRoute exact path="/view-all" component={allPosts} />
-                        <PrivateRoute exact path="/players/page1/0-100" component={Players1} />
-                        <PrivateRoute exact path="/players/page2/101-201" component={Players2} />
-                        <PrivateRoute exact path="/players/page3/202-302" component={Players3} />
-                        <PrivateRoute exact path="/players/page4/303-403" component={Players4} />
-                        <PrivateRoute exact path="/players/page5/404-504" component={Players5} />
-                        <PrivateRoute exact path="/players/page6/505-573" component={Players6} />
+                        <PrivateRoute exact path="/players" component={Players} />
                     </Switch>
                 </Fragment>
             </Router>

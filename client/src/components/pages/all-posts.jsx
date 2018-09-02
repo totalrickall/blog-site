@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { render } from 'react-dom';
 import * as PostService from '../../services/posts';
-import Card from '../tools/card';
+import Card from '../tools/posts-card';
 import * as UserService from '../../services/user';
 
 export default class ViewAll extends Component {
