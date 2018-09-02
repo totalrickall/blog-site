@@ -47,77 +47,57 @@ export default class Players1 extends Component {
           margin: '0 auto'
         }}>
           <li><button className="pagination-link" style={{
-            margin: '5px'
+            padding: '2px 12px'
           }} onClick={() => {
-            this.show1()
+            this.setState({
+              playerPage: 'page1'
+            })
           }}
           >1</button></li>
           <li><button className="pagination-link" style={{
-            margin: '5px'
+            padding: '2px 12px'
           }} onClick={() => {
-            this.show2()
+            this.setState({
+              playerPage: 'page2'
+            })
           }}
           >2</button></li>
           <li><button className="pagination-link" style={{
-            margin: '5px'
+            padding: '2px 12px'
           }} onClick={() => {
-            this.show3()
+            this.setState({
+              playerPage: 'page3'
+            })
           }}
           >3</button></li>
           <li><button className="pagination-link" style={{
-            margin: '5px'
+            padding: '2px 12px'
           }} onClick={() => {
-            this.show4()
+            this.setState({
+              playerPage: 'page4'
+            })
           }}
           >4</button></li>
           <li><button className="pagination-link" style={{
-            margin: '5px'
+            padding: '2px 12px'
           }} onClick={() => {
-            this.show5()
+            this.setState({
+              playerPage: 'page5'
+            })
           }}
           >5</button></li>
           <li><button className="pagination-link" style={{
-            margin: '5px'
+            padding: '2px 12px'
           }} onClick={() => {
-            this.show6()
+            this.setState({
+              playerPage: 'page6'
+            })
           }}
           >6</button></li>
         </ul>
       </div>
     )
-  }
-
-  show1() {
-    this.setState({
-      playerPage: 'page1'
-    })
-  }
-  show2() {
-    this.setState({
-      playerPage: 'page2'
-    })
-  }
-  show3() {
-    this.setState({
-      playerPage: 'page3'
-    })
-  }
-  show4() {
-    this.setState({
-      playerPage: 'page4'
-    })
-  }
-  show5() {
-    this.setState({
-      playerPage: 'page5'
-    })
-  }
-  show6() {
-    this.setState({
-      playerPage: 'page6'
-    })
-  }
-
+  };
 
   /// PLAYER INFO METHODS
   playersInfo1() {
