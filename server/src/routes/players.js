@@ -19,13 +19,12 @@ router.get('/', (req, res) => {
   }).catch((err) => {
     console.error(err)
   });
-});
-
+})
 // SPECIFIC PLAYER
-router.get('/:playerid', (req, res) => {
+  .get('/:playerid', (req, res) => {
 
   let { playerid } = req.params;
-  let url = `http://data.nba.net/json/bios/player_${playerid}.json`;
+  let url = `http://data.nba.net/prod/v1/2016/players/${playerid}_profile.json`;
 
   fetch(url, {
     method: 'GET',
@@ -37,7 +36,7 @@ router.get('/:playerid', (req, res) => {
   }).catch((err) => {
     console.error(err)
   });
-});
+})
 
 
 export default router;

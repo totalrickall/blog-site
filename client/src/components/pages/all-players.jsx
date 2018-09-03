@@ -2,11 +2,11 @@ import React, { Component } from 'react';
 import * as UserService from '../../services/user';
 import * as PlayersService from '../../services/players';
 import ContactInfo from '../tools/contactInfo';
-//import Pagination from '../tools/pagination-players';
+//import Pagination from '../tools/pagination-players'; 
 import InfoCard from '../tools/players-infoCard';
 import Block from '../tools/block';
 
-export default class Players extends Component {
+export default class AllPlayersPage extends Component {
 
   constructor() {
     super();
@@ -31,16 +31,13 @@ export default class Players extends Component {
     }).catch((err) => {
       console.error(err);
     });
-
-    //PlayersService.read(this.props.match.params.id).then((x) => {
-    //  console.log(x);
-    //});
   };
   ///////////////////////////////////// PAGINATION /////////////////////////////////////////////////////////////
   paginationBtn(link, pageNum) {
     return (
       <li><button className="pagination-link" style={{
-        padding: '2px 12px'
+        padding: '2px 12px',
+        cursor: 'pointer'
       }} onClick={() => {
         this.setState({
           playerPage: link
@@ -73,27 +70,28 @@ export default class Players extends Component {
     )
   };
   //////////////////////// PLAYER INFO METHODS //////////////////////////////////////////////////////////////////////////
-
   playerInfoMethod(num1, num2) {
     let players = this.state.playersCollection;
     let array = []
 
     for (let i = 0; i < players.length; i++) {
       let player = players[i];
-      // i: 0 to 100
+      // PLAYER LIMIT PER PAGE
+      // ** Current: 100 **
       if (i >= num1 && i < num2) {
         array.push(player);
       }
     }
     return (
       <div>
-        {array.map((x) => {
+        {array.map((player) => {
           return (
             <InfoCard
-              key={x.personId}
-              firstName={x.firstName}
-              lastName={x.lastName}
-              personId={x.personId}
+              key={player.personId}
+              firstName={player.firstName}
+              lastName={player.lastName}
+              personId={player.personId}
+              link={player.personId}
             />
           )
         })}

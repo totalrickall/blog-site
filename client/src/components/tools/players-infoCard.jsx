@@ -1,11 +1,18 @@
 import React, { Component } from 'react';
 
+//let link = `http://localhost:3000/players-2018/${this.props.link}`;
+
 export default class InfoCard extends Component {
     render() {
         return (
-            <div className="info-card-container">
-                {this.props.firstName} {this.props.lastName}: {this.props.personId}
+            <div className="info-card-container" style={{
+                margin: '10px'
+            }}>
+                <a href={`http://localhost:3000/players-2018/${this.props.link}`}>{this.props.firstName} {this.props.lastName}: {this.props.personId}</a>
             </div>
         )
     }
 }
+
+
+// MAKE A TABLE

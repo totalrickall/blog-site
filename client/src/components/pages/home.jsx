@@ -4,7 +4,7 @@ import Carousel from '../tools/home-carousel';
 import * as UserService from '../../services/user';
 import ContactInfo from '../tools/contactInfo';
 
-export default class Home extends Component {
+export default class HomePage extends Component {
 
   componentDidMount() {
     UserService.checkLogin()

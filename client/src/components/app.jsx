@@ -1,13 +1,15 @@
 import React, { Component, Fragment } from 'react';
 import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom';
 import Home from './pages/home';
-import allPosts from './pages/all-posts';
+import allPostsPage from './pages/all-posts';
+import AllPlayersPage from './pages/all-players';
+import IndividualPlayersPage from './pages/individual-player';
+
 import PrivateRoute from './auth/privateRoute';
 import Login from './auth/login';
 import Logout from './auth/logout';
 import Nav from './nav/nav';
 import SignUp from './auth/signUp';
-import Players from './pages/players';
 
 export default class App extends Component {
     checkedLogin() {
@@ -33,8 +35,9 @@ export default class App extends Component {
                         <Route path="/login" component={Login} />
                         <Route path="/logout" component={Logout} />
                         <Route exact path="/sign-up" component={SignUp} />
-                        <PrivateRoute exact path="/view-all" component={allPosts} />
-                        <PrivateRoute exact path="/players-2018" component={Players} />
+                        <PrivateRoute exact path="/view-all" component={allPostsPage} />
+                        <PrivateRoute exact path="/players-2018" component={AllPlayersPage} />
+                        <PrivateRoute exact path="/players-2018/:playerid" component={IndividualPlayersPage} />
                     </Switch>
                 </Fragment>
             </Router>

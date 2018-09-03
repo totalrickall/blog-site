@@ -5,7 +5,7 @@ function all() {
 }
 
 function read(playerid) {
-    return baseService.get(`/api/posts/${playerid}`);
+    return baseService.get(`/api/players/${playerid}`);
 }
 
 function create(data) {

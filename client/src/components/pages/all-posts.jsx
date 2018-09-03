@@ -5,7 +5,7 @@ import Card from '../tools/posts-card';
 import * as UserService from '../../services/user';
 import ContactInfo from '../tools/contactInfo';
 
-export default class ViewAll extends Component {
+export default class AllPostsPage extends Component {
 
   constructor() {
     super();
