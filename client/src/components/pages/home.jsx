@@ -25,7 +25,7 @@ export default class Home extends Component {
     let message2 = `The league was founded in New York City on June 6, 1946, as the Basketball Association of America (BAA). The league adopted the name National Basketball Association on August 3, 1949, after merging with the competing National Basketball League (NBL). The league's several international as well as individual team offices are directed out of its head offices located in the Olympic Tower at 645 Fifth Avenue in New York, NY. NBA Entertainment and NBA TV studios are directed out of offices located in Secaucus, New Jersey.`;
 
     return (
-      <div className="home-container">
+      <div className="home-page-container">
         <div className="home-sector">
           <Carousel />
           <div data-spy="scroll" data-target="#list-example" data-offset="0" className="scrollspy-example">
@@ -90,8 +90,6 @@ export default class Home extends Component {
   };
 
   render() {
-    return (
-      this.homeContent()
-    )
+    return this.homeContent()
   };
 };

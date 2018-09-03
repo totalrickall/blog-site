@@ -8,13 +8,13 @@ export default class Nav extends Component {
         this.state = {
             isNav: false
         }
-    }
+    };
 
     showNav() {
         this.setState({
             isNav: !this.state.isNav
         })
-    }
+    };
 
     customNavLink(link, description) {
         return (
@@ -23,14 +23,14 @@ export default class Nav extends Component {
             }}
                 href={link}>{description}</a>
         )
-    }
+    };
 
     navContent() {
         if (this.state.isNav) {
 
             let link1 = `/`;
             let link2 = `list-item-1`;
-            let link3 = `/players`;
+            let link3 = `/players-2018`;
             let link4 = `/view-all`;
             let link5 = `#list-item-3`;
 
@@ -70,13 +70,14 @@ export default class Nav extends Component {
             )
         } else {
             return (
-                <img
+                <div className="nav-logo-image-container">
+                    <img
                     className="nav-logo-image d-flex m-3"
                     src="http://www.stickpng.com/assets/images/5856a5274f6ae202fedf2762.png"
                     style={{
                         position: 'fixed',
                         zIndex: '1',
-                        left: '0',
+                        left: '20px',
                         overflowX: 'hidden',
                         weight: '80px',
                         height: '80px',
@@ -86,12 +87,12 @@ export default class Nav extends Component {
                         this.showNav();
                     }}
                 />
+                </div>
             )
         }
     };
+
     render() {
-        return (
-            this.navContent()
-        )
+        return this.navContent()
     };
-};
+}

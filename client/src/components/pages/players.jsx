@@ -3,9 +3,10 @@ import * as UserService from '../../services/user';
 import * as PlayersService from '../../services/players';
 import ContactInfo from '../tools/contactInfo';
 //import Pagination from '../tools/pagination-players';
-import { jj } from '../tools/players-info';
+import InfoCard from '../tools/players-infoCard';
+import Block from '../tools/block';
 
-export default class Players1 extends Component {
+export default class Players extends Component {
 
   constructor() {
     super();
@@ -35,6 +36,19 @@ export default class Players1 extends Component {
     //  console.log(x);
     //});
   };
+  ///////////////////////////////////// PAGINATION /////////////////////////////////////////////////////////////
+  paginationBtn(link, pageNum) {
+    return (
+      <li><button className="pagination-link" style={{
+        padding: '2px 12px'
+      }} onClick={() => {
+        this.setState({
+          playerPage: link
+        })
+      }}
+      >{pageNum}</button></li>
+    )
+  }
 
   paginationContent() {
     return (
@@ -44,291 +58,128 @@ export default class Players1 extends Component {
           maxWidth: '17.5%',
           textAlign: 'center',
           position: 'relative',
-          margin: '0 auto'
+          margin: '0 auto',
+          position: 'fixed',
+          left: '525px'
         }}>
-          <li><button className="pagination-link" style={{
-            padding: '2px 12px'
-          }} onClick={() => {
-            this.setState({
-              playerPage: 'page1'
-            })
-          }}
-          >1</button></li>
-          <li><button className="pagination-link" style={{
-            padding: '2px 12px'
-          }} onClick={() => {
-            this.setState({
-              playerPage: 'page2'
-            })
-          }}
-          >2</button></li>
-          <li><button className="pagination-link" style={{
-            padding: '2px 12px'
-          }} onClick={() => {
-            this.setState({
-              playerPage: 'page3'
-            })
-          }}
-          >3</button></li>
-          <li><button className="pagination-link" style={{
-            padding: '2px 12px'
-          }} onClick={() => {
-            this.setState({
-              playerPage: 'page4'
-            })
-          }}
-          >4</button></li>
-          <li><button className="pagination-link" style={{
-            padding: '2px 12px'
-          }} onClick={() => {
-            this.setState({
-              playerPage: 'page5'
-            })
-          }}
-          >5</button></li>
-          <li><button className="pagination-link" style={{
-            padding: '2px 12px'
-          }} onClick={() => {
-            this.setState({
-              playerPage: 'page6'
-            })
-          }}
-          >6</button></li>
+          {this.paginationBtn('page1', 1)}
+          {this.paginationBtn('page2', 2)}
+          {this.paginationBtn('page3', 3)}
+          {this.paginationBtn('page4', 4)}
+          {this.paginationBtn('page5', 5)}
+          {this.paginationBtn('page6', 6)}
         </ul>
       </div>
     )
   };
+  //////////////////////// PLAYER INFO METHODS //////////////////////////////////////////////////////////////////////////
 
-  /// PLAYER INFO METHODS
-  playersInfo1() {
+  playerInfoMethod(num1, num2) {
     let players = this.state.playersCollection;
-    let i = 0;
-    let arr1 = [];
+    let array = []
 
-    for (i = 0; i < players.length; i++) {
+    for (let i = 0; i < players.length; i++) {
       let player = players[i];
       // i: 0 to 100
-      if (i >= 0 && i < 101) {
-        arr1.push(player);
+      if (i >= num1 && i < num2) {
+        array.push(player);
       }
     }
     return (
       <div>
-        {arr1.map((x) => {
+        {array.map((x) => {
           return (
-            <div key={x.personId}>
-              {x.lastName}
-            </div>
+            <InfoCard
+              key={x.personId}
+              firstName={x.firstName}
+              lastName={x.lastName}
+              personId={x.personId}
+            />
           )
         })}
       </div>
     )
+  };
+
+  playersInfo1() {
+    let num1 = 0;
+    let num2 = 101;
+    return this.playerInfoMethod(num1, num2)
   };
 
   playersInfo2() {
-    let players = this.state.playersCollection;
-    let i = 0;
-    let arr2 = [];
-
-    for (i = 0; i < players.length; i++) {
-      let player = players[i];
-      // i: 101 to 201
-      if (i >= 101 && i < 201) {
-        arr2.push(player);
-      }
-    }
-    return (
-      <div>
-        {arr2.map((x) => {
-          return (
-            <div key={x.personId}>
-              {x.lastName}
-            </div>
-          )
-        })}
-      </div>
-    )
+    let num1 = 101;
+    let num2 = 201;
+    return this.playerInfoMethod(num1, num2)
   };
 
   playersInfo3() {
-    let players = this.state.playersCollection;
-    let i = 0;
-    let arr3 = [];
-
-    for (i = 0; i < players.length; i++) {
-      let player = players[i];
-      // i: 202 to 302
-      if (i >= 202 && i < 302) {
-        arr3.push(player);
-      }
-    }
-    return (
-      <div>
-        {arr3.map((x) => {
-          return (
-            <div key={x.personId}>
-              {x.lastName}
-            </div>
-          )
-        })}
-      </div>
-    )
+    let num1 = 202;
+    let num2 = 302;
+    return this.playerInfoMethod(num1, num2)
   };
 
   playersInfo4() {
-    let players = this.state.playersCollection;
-    let i = 0;
-    let arr4 = [];
-
-    for (i = 0; i < players.length; i++) {
-      let player = players[i];
-      // i: 303 to 403
-      if (i >= 303 && i < 403) {
-        arr4.push(player);
-      }
-    }
-    return (
-      <div>
-        {arr4.map((x) => {
-          return (
-            <div key={x.personId}>
-              {x.lastName}
-            </div>
-          )
-        })}
-      </div>
-    )
+    let num1 = 303;
+    let num2 = 403;
+    return this.playerInfoMethod(num1, num2)
   };
 
   playersInfo5() {
-    let players = this.state.playersCollection;
-    let i = 0;
-    let arr5 = [];
+    let num1 = 404;
+    let num2 = 504;
+    return this.playerInfoMethod(num1, num2)
+  };
 
-    for (i = 0; i < players.length; i++) {
-      let player = players[i];
-      // i: 404 to 504
-      if (i >= 404 && i < 504) {
-        arr5.push(player);
-      }
-    }
+  playersInfo6() {
+    let num1 = 505;
+    let num2 = 605;
+    return this.playerInfoMethod(num1, num2)
+  };
+  //////////////////////////////////////////////////////////////////////////////////////////////////
+  playersContentLayout(title, info) {
     return (
-      <div>
-        {arr5.map((x) => {
-          return (
-            <div key={x.personId}>
-              {x.lastName}
-            </div>
-          )
-        })}
+      <div className="players-container-1">
+        <h1 style={{
+          textAlign: 'center'
+        }}>{title}</h1>
+        {this.paginationContent()}
+        {info}
       </div>
     )
   }
-
-  playersInfo6() {
-    let players = this.state.playersCollection;
-    let i = 0;
-    let arr6 = [];
-
-    for (i = 0; i < players.length; i++) {
-      let player = players[i];
-      // i: 505 to 532
-      if (i >= 505 && i < 605) {
-        arr6.push(player);
-      }
-    }
-    return (
-      <div>
-        {arr6.map((x) => {
-          return (
-            <div key={x.personId}>
-              {x.lastName}
-            </div>
-          )
-        })}
-      </div>
-    )
-  };
-
-  /////////////////////////////////////////////////
   playersContent() {
+    let title1 = `Players: 0-100`;
+    let title2 = `Players: 101-201`;
+    let title3 = `Players: 202-302`;
+    let title4 = `Players: 303-403`;
+    let title5 = `Players: 404-504`;
+    let title6 = `Players: 505-573`;
+
     if (this.state.playerPage === 'page1') {
-      return (
-        <div className="players-container-1">
-          {this.paginationContent()}
-          <h1 style={{
-            textAlign: 'center'
-          }}>Players: 0-100</h1>
-          {this.playersInfo1()}
-          {this.paginationContent()}
-        </div>
-      )
+      return this.playersContentLayout(title1, this.playersInfo1())
     };
     if (this.state.playerPage === 'page2') {
-      return (
-        <div className="players-container-2">
-          {this.paginationContent()}
-          <h1 style={{
-            textAlign: 'center'
-          }}>Players: 101-201</h1>
-          {this.playersInfo2()}
-          {this.paginationContent()}
-        </div>
-      )
+      return this.playersContentLayout(title2, this.playersInfo2())
     };
     if (this.state.playerPage === 'page3') {
-      return (
-        <div className="players-container-3">
-          {this.paginationContent()}
-          <h1 style={{
-            textAlign: 'center'
-          }}>Players: 202-302</h1>
-          {this.playersInfo3()}
-          {this.paginationContent()}
-        </div>
-      )
+      return this.playersContentLayout(title3, this.playersInfo3())
     };
     if (this.state.playerPage === 'page4') {
-      return (
-        <div className="players-container-4">
-          {this.paginationContent()}
-          <h1 style={{
-            textAlign: 'center'
-          }}>Players: 303-403</h1>
-          {this.playersInfo4()}
-          {this.paginationContent()}
-        </div>
-      )
+      return this.playersContentLayout(title4, this.playersInfo4())
     };
     if (this.state.playerPage === 'page5') {
-      return (
-        <div className="players-container-5">
-          {this.paginationContent()}
-          <h1 style={{
-            textAlign: 'center'
-          }}>Players: 404-504</h1>
-          {this.playersInfo5()}
-          {this.paginationContent()}
-        </div>
-      )
+      return this.playersContentLayout(title5, this.playersInfo5())
     };
     if (this.state.playerPage === 'page6') {
-      return (
-        <div className="players-container-6">
-          {this.paginationContent()}
-          <h1 style={{
-            textAlign: 'center'
-          }}>Players: 505-573</h1>
-          {this.playersInfo6()}
-          {this.paginationContent()}
-        </div>
-      )
+      return this.playersContentLayout(title6, this.playersInfo6())
     }
   };
-
+  //////////////////////////////////////////////////////////////////////////////////////////////////
   render() {
     return (
-      <div className="players-container">
+      <div className="players-page-container">
+        <Block />
         {this.playersContent()}
         <ContactInfo />
       </div>

@@ -3,6 +3,7 @@ import { render } from 'react-dom';
 import * as PostService from '../../services/posts';
 import Card from '../tools/posts-card';
 import * as UserService from '../../services/user';
+import ContactInfo from '../tools/contactInfo';
 
 export default class ViewAll extends Component {
 
@@ -57,7 +58,10 @@ export default class ViewAll extends Component {
 
   render() {
     return (
-      this.allPostsContent()
+      <div className="posts-page-container">
+        {this.allPostsContent()}
+        <ContactInfo />
+      </div>
     )
   }
 };

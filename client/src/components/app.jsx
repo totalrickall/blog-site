@@ -5,7 +5,6 @@ import allPosts from './pages/all-posts';
 import PrivateRoute from './auth/privateRoute';
 import Login from './auth/login';
 import Logout from './auth/logout';
-//import Navbar from './nav/navbar';
 import Nav from './nav/nav';
 import SignUp from './auth/signUp';
 import Players from './pages/players';
@@ -35,7 +34,7 @@ export default class App extends Component {
                         <Route path="/logout" component={Logout} />
                         <Route exact path="/sign-up" component={SignUp} />
                         <PrivateRoute exact path="/view-all" component={allPosts} />
-                        <PrivateRoute exact path="/players" component={Players} />
+                        <PrivateRoute exact path="/players-2018" component={Players} />
                     </Switch>
                 </Fragment>
             </Router>
