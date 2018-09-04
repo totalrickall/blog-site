@@ -1,4 +1,5 @@
 import React, { Component, Fragment } from 'react';
+import '../styles/app';
 import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom';
 import Home from './pages/home';
 import allPostsPage from './pages/all-posts';

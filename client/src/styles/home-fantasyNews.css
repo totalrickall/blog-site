@@ -1,6 +1,7 @@
 .home-section-1 {
     height: 600px;
     background: lightgrey;
+
 }
 
 .section-1-inner {
@@ -27,6 +28,11 @@
     text-decoration: none;
     color: black;
     background: white;
+}
+
+.fantasy-news-container:hover {
+    background: #F7F5CF;
+    opacity: 80%;
 }
 
 .fantasy-news-h6 {

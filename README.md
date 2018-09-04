@@ -21,9 +21,6 @@ NBA API (roster) http://data.nba.net/prod/v1/2016/teams/1610612745/roster.json
 ---------------------------------------------------------------------------------------------------------
 
 
-
-
-
 https://www.quora.com/Is-there-an-NBA-API-for-free-that-has-live-stats --> more apis
 
 OPEN SANS FONT https://fonts.google.com/?selection.family=Open+Sans

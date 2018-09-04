@@ -1,10 +1,15 @@
 import React, { Component } from 'react';
 
 export default class FantasyNewsArticles extends Component {
+
   select() {
     //console.log('MODAL POPUP FOR DESCRIPTION')
     alert('MODAL POPUP FOR DESCRIPTION')
-  }
+  };
+
+  modalContent() {
+
+  };
 
   container(key, date, headline, caption, team) {
     // MODAL
@@ -18,7 +23,7 @@ export default class FantasyNewsArticles extends Component {
         <p className="fantasy-news-p" id="fantasy-news-p3">{date}</p>
       </div>
     )
-  }
+  };
 
   fantasyNewsArticlesContent() {
     let data = this.props.robot;
@@ -43,8 +48,9 @@ export default class FantasyNewsArticles extends Component {
         return this.container(key, date, headline, caption, team)
       })
     )
-  }
+  };
+
   render() {
     return this.fantasyNewsArticlesContent()
-  }
+  };
 }
