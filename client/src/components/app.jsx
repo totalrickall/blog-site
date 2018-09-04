@@ -36,8 +36,8 @@ export default class App extends Component {
                         <Route path="/logout" component={Logout} />
                         <Route exact path="/sign-up" component={SignUp} />
                         <PrivateRoute exact path="/view-all" component={allPostsPage} />
-                        <PrivateRoute exact path="/players-2018" component={AllPlayersPage} />
-                        <PrivateRoute exact path="/players-2018/:playerid" component={IndividualPlayersPage} />
+                        <PrivateRoute exact path="/players" component={AllPlayersPage} />
+                        <PrivateRoute exact path="/players/:playerid" component={IndividualPlayersPage} />
                     </Switch>
                 </Fragment>
             </Router>

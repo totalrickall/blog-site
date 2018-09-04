@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import * as UserService from '../../services/user';
 import * as PlayersService from '../../services/players';
 import ContactInfo from '../tools/contactInfo';
@@ -17,17 +17,12 @@ export default class AllPlayersPage extends Component {
   }
 
   componentDidMount() {
-    UserService.me().then((user) => {
-      //console.log(user);
-      return PlayersService.all().then((players) => {
-        let { league } = players;
-        let { standard } = league;
-        this.setState({
-          playersCollection: [...standard]
-        })
-      }).catch((err) => {
-        console.error(err);
-      });
+    PlayersService.all().then((players) => {
+      let { league } = players;
+      let { standard } = league;
+      this.setState({
+        playersCollection: [...standard]
+      })
     }).catch((err) => {
       console.error(err);
     });
@@ -83,7 +78,7 @@ export default class AllPlayersPage extends Component {
       }
     }
     return (
-      <div>
+      <Fragment>
         {array.map((player) => {
           return (
             <InfoCard
@@ -95,7 +90,7 @@ export default class AllPlayersPage extends Component {
             />
           )
         })}
-      </div>
+      </Fragment>
     )
   };
 

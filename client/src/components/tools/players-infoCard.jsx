@@ -8,7 +8,7 @@ export default class InfoCard extends Component {
             <div className="info-card-container" style={{
                 margin: '10px'
             }}>
-                <a href={`http://localhost:3000/players-2018/${this.props.link}`}>{this.props.firstName} {this.props.lastName}: {this.props.personId}</a>
+                <a href={`http://localhost:3000/players/${this.props.link}`}>{this.props.lastName}, {this.props.firstName}: {this.props.personId}</a>
             </div>
         )
     }

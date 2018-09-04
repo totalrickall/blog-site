@@ -4,20 +4,16 @@ function all() {
     return baseService.get(`/api/players`);
 }
 
-function read(playerid) {
+function readStats(playerid) {
     return baseService.get(`/api/players/${playerid}`);
 }
 
-function create(data) {
-    return baseService.post('/api/posts', data);
+function readRecentNews(playerid) {
+    return baseService.get(`/api/players/recent-news-for/${playerid}`);
 }
 
-function update(id, data) {
-    return baseService.put(`/api/posts/${id}`, data);
+function readBioInfo(playerid) {
+    return baseService.get(`/api/players/bio-info/${playerid}`);
 }
 
-function destroy(id) {
-    return baseService.destroy(`/api/posts/${id}`);
-}
-
-export { all, read, create, update, destroy };
+export { all, readStats, readRecentNews, readBioInfo };

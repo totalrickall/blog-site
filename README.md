@@ -6,7 +6,7 @@ NBA API (player stats) http://data.nba.net/prod/v1/2016/players/{playerId}_profi
 
 NBA API (player recent news) https://stats-prod.nba.com/wp-json/statscms/v1/rotowire/player/?playerId=2544&limit=10&offset=0
 
-NBA API (player defense stats) 
+NBA API (player bio) http://data.nba.net/json/bios/player_201935.json
 
 NBA API (whats new --> articles) https://stats-prod.nba.com/wp-json/statscms/v1/type/whatsnew/?limit={LIMIT#}&offset=0
 
