@@ -47,11 +47,11 @@ export default class HomePage extends Component {
         background: 'lightgrey'
       }}>
         <div style={{
-          width: '50%',
+          width: '80%',
           textAlign: 'center',
           position: 'relative',
           margin: '0 auto',
-          top: '8rem'
+          top: '5rem',
         }}>
           <h3>Fantasy News</h3>
           <p>[Current_Date]</p>
