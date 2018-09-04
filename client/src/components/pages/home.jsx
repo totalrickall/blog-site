@@ -1,4 +1,5 @@
 import React, { Component, Fragment } from 'react';
+import '../../styles/home-fantasyNews';
 import { render } from 'react-dom';
 import Carousel from '../tools/home-carousel';
 import * as UserService from '../../services/user';
@@ -42,17 +43,8 @@ export default class HomePage extends Component {
   fantasyNews() {
 
     return (
-      <div className="home-section-1" id="list-item-1" style={{
-        height: '600px',
-        background: 'lightgrey'
-      }}>
-        <div style={{
-          width: '80%',
-          textAlign: 'center',
-          position: 'relative',
-          margin: '0 auto',
-          top: '5rem',
-        }}>
+      <div className="home-section-1" id="list-item-1">
+        <div className="section-1-inner">
           <h3>Fantasy News</h3>
           <p>[Current_Date]</p>
           <FantasyNewsArticles 
