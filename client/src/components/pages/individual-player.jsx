@@ -3,6 +3,7 @@ import * as UserService from '../../services/user';
 import * as PlayersService from '../../services/players';
 import Block from '../tools/block';
 import ContactInfo from '../tools/contactInfo';
+import StatTable from '../tools/statTable';
 
 export default class IndividualPlayerPage extends Component {
   constructor() {
@@ -44,80 +45,11 @@ export default class IndividualPlayerPage extends Component {
     });
   };
 
-  tableHeader(name) {
-    return (
-      <th style={{
-        border: '1px solid black',
-        backgroundColor: 'lightgrey',
-        textAlign: 'center'
-      }}>{name}</th>
-    )
-  }
-
-  tableCell(description) {
-    return <td style={{
-      border: '1px solid black',
-      padding: '5px',
-      textAlign: 'center'
-    }}>{description}</td>
-  }
-
-  tableRow(year, ppg, apg, rpg, spg, bpg, mpg) {
-    return (
-      <tr key={year}>
-        {this.tableCell(year)}
-        {this.tableCell(ppg)}
-        {this.tableCell(apg)}
-        {this.tableCell(rpg)}
-        {this.tableCell(spg)}
-        {this.tableCell(bpg)}
-        {this.tableCell(mpg)}
-      </tr>
-    )
-  }
-  tableBody() {
-    let stats = this.state.playerStats;
-    let array = []
-    let seasons = stats[0].league.standard.stats.regularSeason.season;
-
-    for (let i = 0; i < seasons.length; i++) {
-      let season = seasons[i];
-      array.push(season);
-    }
-    return (
-      array.map((season) => {
-        //console.log(season);
-        let year = season.seasonYear;
-        let ppg = season.total.ppg;
-        let apg = season.total.apg;
-        let rpg = season.total.rpg;
-        let spg = season.total.spg;
-        let bpg = season.total.bpg;
-        let mpg = season.total.mpg;
-
-        return this.tableRow(year, ppg, apg, rpg, spg, bpg, mpg)
-      })
-    )
-
-    //  return (
-    //    <tr key={item.id}>
-    //      <td>{item.item}</td>
-    //      <td>{item.categoryname}</td>
-    //      <td>
-    //        <i
-    //          className="fa fa-trash"
-    //          aria-hidden="true"
-    //        />
-    //      </td>
-    //    </tr>
-    //  );
-  }
-
   statType(type) {
     return <p style={{
       padding: '10px'
     }}>{type}</p>
-  }
+  };
 
   playerStats() {
     return (
@@ -135,8 +67,7 @@ export default class IndividualPlayerPage extends Component {
                 <h3
                   style={{
                     padding: '8px',
-                    background: 'grey',
-                    color: 'white'
+                    background: 'lightgrey'
                   }}
                 >Career Averages</h3>
                 {this.statType(`PPG: ${stats.ppg}`)}
@@ -147,32 +78,15 @@ export default class IndividualPlayerPage extends Component {
                 {this.statType(`MPG: ${stats.mpg}`)}
               </div>
               <br />
-              <table style={{
-                borderCollapse: 'collapse',
-                width: '100%'
-            }}>
-                <thead style={{
-              }}>
-                <tr>
-                  {this.tableHeader(`Year`)}
-                  {this.tableHeader(`PPG`)}
-                  {this.tableHeader(`APG`)}
-                  {this.tableHeader(`RPG`)}
-                  {this.tableHeader(`SPG`)}
-                  {this.tableHeader(`BPG`)}
-                  {this.tableHeader(`MPG`)}
-                </tr>
-              </thead>
-              <tbody>
-                {this.tableBody()}
-              </tbody>
-              </table>
+              <StatTable 
+                robot={this.state.playerStats}
+              />
             </div>
 
 
 
-      )
-    })}
+          )
+        })}
       </div>
     )
   };
@@ -196,7 +110,7 @@ export default class IndividualPlayerPage extends Component {
   //   )
   // };
 
-  playerBioInfoContent() {
+  playerInfoContent() {
     return (
       <div>
         {this.state.bioInfoContainer.map((player) => {
@@ -224,7 +138,7 @@ export default class IndividualPlayerPage extends Component {
       }}>
         <Block />
         {/*{this.playerRecentNewsContent()}*/}
-        {this.playerBioInfoContent()}
+        {this.playerInfoContent()}
         <ContactInfo />
       </div>
     )

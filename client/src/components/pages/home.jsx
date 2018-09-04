@@ -1,10 +1,20 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import { render } from 'react-dom';
 import Carousel from '../tools/home-carousel';
 import * as UserService from '../../services/user';
+import * as NewsService from '../../services/news';
 import ContactInfo from '../tools/contactInfo';
+import FantasyNewsArticles from '../tools/home-fantasyNewsArticles';
 
 export default class HomePage extends Component {
+
+  constructor() {
+    super();
+
+    this.state = {
+      fantasyNewsContainer: []
+    }
+  }
 
   componentDidMount() {
     UserService.checkLogin()
@@ -17,7 +27,41 @@ export default class HomePage extends Component {
       }).catch((err) => {
         console.error(err);
       });
+
+    NewsService.all().then((data) => {
+      //console.log(data)
+      this.setState({
+        fantasyNewsContainer: [data]
+      });
+    }).catch((err) => {
+      console.error(err)
+    });
+
   };
+
+  fantasyNews() {
+
+    return (
+      <div className="home-section-1" id="list-item-1" style={{
+        height: '600px',
+        background: 'lightgrey'
+      }}>
+        <div style={{
+          width: '50%',
+          textAlign: 'center',
+          position: 'relative',
+          margin: '0 auto',
+          top: '8rem'
+        }}>
+          <h3>Fantasy News</h3>
+          <p>[Current_Date]</p>
+          <FantasyNewsArticles 
+            robot={this.state.fantasyNewsContainer}
+          />
+        </div>
+      </div>
+    )
+  }
 
   homeContent() {
 
@@ -29,21 +73,7 @@ export default class HomePage extends Component {
         <div className="home-sector">
           <Carousel />
           <div data-spy="scroll" data-target="#list-example" data-offset="0" className="scrollspy-example">
-            <div className="home-section-1" id="list-item-1" style={{
-              height: '600px',
-              background: 'lightgrey'
-            }}>
-              <div style={{
-                width: '50%',
-                textAlign: 'center',
-                position: 'relative',
-                margin: '0 auto',
-                top: '8rem'
-              }}>
-                <h3>Join millions of others</h3>
-                <p>{message1}</p>
-              </div>
-            </div>
+            {this.fantasyNews()}
             <div className="home-section-2" id="list-item-2" style={{
               height: '600px',
               background: 'grey'

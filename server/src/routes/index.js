@@ -5,6 +5,7 @@ import postsRouter from './posts';
 import tagsRouter from './tags';
 import favoritesRouter from './favorites';
 import playersRouter from './players';
+import newsRouter from './nbaNews';
 import { isLoggedIn, tokenMiddleware } from '../middleware/auth.mw';
 
 let router = Router();
@@ -14,12 +15,11 @@ let router = Router();
 //    .put(tokenMiddleware, isLoggedIn)
 //    .delete(tokenMiddleware, isLoggedIn);
 
-router
+export default router
     .use('/auth', authRouter)
     .use('/users', usersRouter)
     .use('/posts', postsRouter)
     .use('/tags', tagsRouter)
     .use('/favorites', favoritesRouter)
     .use('/players', playersRouter)
-
-export default router;
+    .use('/news', newsRouter)

@@ -5,8 +5,8 @@ import 'isomorphic-fetch';
 let router = Router();
 
 // ALL PLAYERS
-router.get('/', (req, res) => {
-  let url = `http://data.nba.net/10s/prod/v1/2016/players.json`;
+export default router.get('/', (req, res) => {
+  let url = `http://data.nba.net/10s/prod/v1/2018/players.json`;
 
   fetch(url, {
     method: 'GET',
@@ -67,6 +67,3 @@ router.get('/', (req, res) => {
       console.error(err)
     });
   })
-
-
-export default router;

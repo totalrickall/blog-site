@@ -3,7 +3,7 @@ import * as Favorites from '../controllers/favorites.ctrl';
 
 let router = Router();
 
-router
+export default router
     .get('/', Favorites.all)
     .get('/:id', Favorites.read)
     .get('/post/:postid', Favorites.readByPostId)
@@ -11,7 +11,4 @@ router
     .post('/', Favorites.create)
     .put('/:id', Favorites.update)
     .delete('/:id', Favorites.destroy)
-    .delete('/', Favorites.destroyByPostIdAndUserId);
-
-
-export default router;
+    .delete('/', Favorites.destroyByPostIdAndUserId)

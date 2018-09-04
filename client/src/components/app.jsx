@@ -12,19 +12,6 @@ import Nav from './nav/nav';
 import SignUp from './auth/signUp';
 
 export default class App extends Component {
-    checkedLogin() {
-        if (!this.state.loggedIn) {
-          userService.checkLogin().then(isAuthenticated => {
-            //console.log("from Services login status is:" + isAuthenticated);
-            if (isAuthenticated) {
-              this.setState({
-                loggedIn: isAuthenticated
-              });
-            }
-          });
-        }
-    };
-
     routes() {
         return (
             <Router>
