@@ -26,14 +26,14 @@ export default class FantasyNewsArticles extends Component {
   };
 
   fantasyNewsArticlesContent() {
-    let data = this.props.robot;
+    let data = this.props.data;
     let array = [];
 
     data.map((all) => {
       let fantasyNews = all.fantasynews
       for (let i = 0; i < fantasyNews.length; i++) {
         let article = fantasyNews[i];
-        console.log(article);
+        //console.log(article);
         array.push(article);
       }
     })
@@ -51,6 +51,14 @@ export default class FantasyNewsArticles extends Component {
   };
 
   render() {
-    return this.fantasyNewsArticlesContent()
+    return (
+      <div className="home-section-1" id="list-item-1">
+        <div className="section-1-inner">
+          <h3>Fantasy News</h3>
+          <p>[Current_Date]</p>
+          {this.fantasyNewsArticlesContent()}
+        </div>
+      </div>
+    )
   };
 }

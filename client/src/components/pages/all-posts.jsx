@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { render } from 'react-dom';
 import * as PostService from '../../services/posts';
-import Card from '../tools/posts-card';
+import Card from '../tools/all-posts/posts-card';
 import * as UserService from '../../services/user';
 import ContactInfo from '../tools/contactInfo';
 

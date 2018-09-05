@@ -6,7 +6,7 @@ let router = Router();
 
 // ALL PLAYERS
 export default router.get('/', (req, res) => {
-  let url = `http://data.nba.net/10s/prod/v1/2018/players.json`;
+  let url = `http://data.nba.net/10s/prod/v1/2016/players.json`;
 
   fetch(url, {
     method: 'GET',

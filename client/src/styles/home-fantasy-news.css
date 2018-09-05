@@ -1,6 +1,6 @@
 .home-section-1 {
     height: 600px;
-    background: lightgrey;
+    background: grey;
 
 }
 
@@ -32,19 +32,14 @@
 
 .fantasy-news-container:hover {
     background: #F7F5CF;
-    opacity: 80%;
 }
 
 .fantasy-news-h6 {
-    border: 1px solid black;
     padding: 10px;
-    background: #5298D5;
+    background: #1d2b34;
+    color: white;
 }
 
 #fantasy-news-p2 {
-    padding: 0px 20px;
-}
-
-#fantasy-news-p3 {
-    font-size: .5rem;
+    padding: 0px 10px;
 }

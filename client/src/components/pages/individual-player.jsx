@@ -3,7 +3,7 @@ import * as UserService from '../../services/user';
 import * as PlayersService from '../../services/players';
 import Block from '../tools/block';
 import ContactInfo from '../tools/contactInfo';
-import StatTable from '../tools/statTable';
+import StatTable from '../tools/individual-player/statTable';
 
 export default class IndividualPlayerPage extends Component {
   constructor() {

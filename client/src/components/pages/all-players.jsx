@@ -3,7 +3,7 @@ import * as UserService from '../../services/user';
 import * as PlayersService from '../../services/players';
 import ContactInfo from '../tools/contactInfo';
 //import Pagination from '../tools/pagination-players'; 
-import InfoCard from '../tools/players-infoCard';
+import InfoCard from '../tools/all-players/info-card';
 import Block from '../tools/block';
 
 export default class AllPlayersPage extends Component {

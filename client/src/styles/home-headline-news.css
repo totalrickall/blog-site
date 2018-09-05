@@ -1,0 +1,21 @@
+.home-section-2 {
+    height: 600px;
+    background: lightgrey
+}
+
+.section-2-inner {
+    text-align: center;
+    position: relative;
+    margin: 0 auto;
+    top: 2rem;
+}
+
+.headline-news-container {
+    text-decoration: none;
+    border: 1px solid black;
+}
+
+.headline-news-container:hover {
+    cursor: pointer;
+    background: #F7F5CF;
+}
