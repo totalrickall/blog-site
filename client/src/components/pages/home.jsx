@@ -1,13 +1,18 @@
 import React, { Component, Fragment } from 'react';
-import '../../styles/home-fantasy-news';
-import '../../styles/home-headline-news';
+import '../../styles/home/home-headline-news';
+import '../../styles/home/home-assist-leaders';
+import '../../styles/home/home-fantasy-news';
+import '../../styles/home/home-shot-chart';
+import '../../styles/home/home-spotlight-news';
 import { render } from 'react-dom';
-import Carousel from '../tools/home/carousel';
 import * as UserService from '../../services/user';
 import * as NewsService from '../../services/news';
 import ContactInfo from '../tools/contactInfo';
 import FantasyNewsArticles from '../tools/home/fantasy-news-articles';
 import HeadlineNewsArticles from '../tools/home/headline-articles';
+import ShotChartData from '../tools/home/shot-chart';
+import AssistLeadersData from '../tools/home/assist-leaders';
+import SpotlightNewsData from '../tools/home/spotlight-news';
 
 export default class HomePage extends Component {
 
@@ -15,7 +20,8 @@ export default class HomePage extends Component {
     super();
 
     this.state = {
-      newsContainer: []
+      newsContainer: [],
+      spotlightContainer: []
     }
   }
 
@@ -32,9 +38,17 @@ export default class HomePage extends Component {
       });
 
     NewsService.all().then((data) => {
-      console.log(data)
+      //console.log(data)
       this.setState({
         newsContainer: [data]
+      });
+    }).catch((err) => {
+      console.error(err)
+    });
+    NewsService.readSpotlight().then((data) => {
+      //console.log(data)
+      this.setState({
+        spotlightContainer: [data]
       });
     }).catch((err) => {
       console.error(err)
@@ -42,7 +56,54 @@ export default class HomePage extends Component {
 
   };
 
+  spotlightNews() {
+    // 1
+    return (
+      <SpotlightNewsData 
+        data={this.state.spotlightContainer}
+      />
+    )
+  }
+
+  headlineNews() {
+    // 2
+    return (
+      <HeadlineNewsArticles
+        data={this.state.newsContainer}
+      />
+    )
+  };
+
+  assistLeaders() {
+    // 3
+    return (
+      <AssistLeadersData
+        data={this.state.newsContainer}
+      />
+    )
+  }
+
+  fantasyNews() {
+    // 4
+    return (
+      <FantasyNewsArticles
+        data={this.state.newsContainer}
+      />
+    )
+  };
+
+
+  shotChartData() {
+    // 5
+    return (
+      <ShotChartData
+        data={this.state.newsContainer}
+      />
+    )
+  };
+
   signUp() {
+    // 6
     return (
       <div className="home-section-5" id="list-item-5" style={{
         height: '450px',
@@ -68,92 +129,24 @@ export default class HomePage extends Component {
         </div>
       </div>
     )
-  }
-
-  shotChartData() {
-    return (
-      <div className="home-section-3" id="list-item-3" style={{
-        height: '450px',
-        background: 'white',
-      }}>
-        <div style={{
-          width: '50%',
-          textAlign: 'center',
-          position: 'relative',
-          margin: '0 auto',
-          top: '8rem'
-        }}>
-          <h3>* Coming Soon Shot Chart Data</h3>
-        </div>
-      </div>
-    )
-  }
-
-  beyondTheNumbers() {
-    return (
-      <div className="home-section-4" id="list-item-4" style={{
-        height: '450px',
-        background: 'white',
-      }}>
-        <div style={{
-          width: '50%',
-          textAlign: 'center',
-          position: 'relative',
-          margin: '0 auto',
-          top: '8rem'
-        }}>
-          <h3>* Coming Soon Beyond the Numbers</h3>
-        </div>
-      </div>
-    )
-  }
-
-  boxScoreLinks() {
-    return (
-      <div className="home-section-6" id="list-item-6" style={{
-        height: '450px',
-        background: 'white',
-      }}>
-        <div style={{
-          width: '50%',
-          textAlign: 'center',
-          position: 'relative',
-          margin: '0 auto',
-          top: '8rem'
-        }}>
-          <h3>* Coming Soon Box Score Links</h3>
-        </div>
-      </div>
-    )
-  }
-
-  fantasyNews() {
-    return (
-      <FantasyNewsArticles
-        data={this.state.newsContainer}
-      />
-    )
-  }
-
-  headlineNews() {
-    return (
-      <HeadlineNewsArticles
-        data={this.state.newsContainer}
-      />
-    )
-  }
+  };
 
   homeContent() {
     return (
       <div className="home-page-container">
         <div className="home-sector">
-          <Carousel />
+          <div className="home-top-container">
+            <div className="home-top-banner">
+              <h1>NBA Messenger</h1>
+              <p>Front Page Display Message</p>
+            </div>
+          </div>
           <div data-spy="scroll" data-target="#list-example" data-offset="0" className="scrollspy-example">
+            {this.spotlightNews()}
             {this.headlineNews()}
+            {this.assistLeaders()}
             {this.fantasyNews()}
             {this.shotChartData()}
-            {this.beyondTheNumbers()}
-            {this.boxScoreLinks()}
             {this.signUp()}
             <ContactInfo />
           </div>

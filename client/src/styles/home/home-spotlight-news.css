@@ -1,0 +1,14 @@
+.home-section-1 {
+    background: white;
+    height: 1000px;
+}
+
+.section-1-inner {
+    padding: 20px;
+    text-align: center;
+    position: relative;
+    margin: 0 auto;
+    top: 2rem;
+    height: 60rem;
+    overflow: scroll;
+}

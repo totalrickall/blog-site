@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import AuthButton from '../auth/authButton';
+import UserBtn from './user-btn';
 
 export default class Nav extends Component {
     constructor() {
@@ -18,10 +19,7 @@ export default class Nav extends Component {
 
     customNavLink(link, description) {
         return (
-            <a className="custom-nav-link" style={{
-                color: 'white'
-            }}
-                href={link}>{description}</a>
+            <a className="custom-nav-link" href={link}>{description}</a>
         )
     };
 
@@ -41,52 +39,29 @@ export default class Nav extends Component {
             let description5 = `Contact Us`;
 
             return (
-                <div id="list-example" className="list-group" style={{
-                    height: '100%',
-                    width: '200px',
-                    position: 'fixed',
-                    zIndex: '1',
-                    top: '0px',
-                    left: '0',
-                    overflowX: 'hidden',
-                    padding: '20px 20px',
-                    background: '#1d2b34',
-                    border: '2px solid white'
-                }}
-                    onMouseLeave={() => {
-                        this.showNav();
-                    }}>
-                    <h3 style={{
-                        color: 'white'
-                    }}>NBA MESSENGER</h3>
-                    <br />
-                    {this.customNavLink(link1, description1)}
-                    {this.customNavLink(link2, description2)}
-                    {this.customNavLink(link3, description3)}
-                    {this.customNavLink(link4, description4)}
-                    {this.customNavLink(link5, description5)}
-                    <AuthButton />
+                <div id="list-example" className="nav-container" onMouseLeave={() => {
+                    this.showNav();
+                }}>
+                    <div className="nav-content">
+                        <h3 className="nav-h3">NBA MESSENGER</h3>
+                        <br />
+                        {this.customNavLink(link1, description1)}
+                        {this.customNavLink(link2, description2)}
+                        {this.customNavLink(link3, description3)}
+                        {this.customNavLink(link4, description4)}
+                        {this.customNavLink(link5, description5)}
+                        <AuthButton />
+                    </div>
+                    <UserBtn />
                 </div>
             )
         } else {
             return (
                 <div className="nav-logo-image-container">
-                    <img
-                    className="nav-logo-image d-flex m-3"
-                    src="http://www.stickpng.com/assets/images/5856a5274f6ae202fedf2762.png"
-                    style={{
-                        position: 'fixed',
-                        zIndex: '1',
-                        left: '20px',
-                        overflowX: 'hidden',
-                        weight: '80px',
-                        height: '80px',
-                        background: 'transparent',
-                    }}
-                    onMouseOver={() => {
+                    <div className="nav-logo" onMouseOver={() => {
                         this.showNav();
-                    }}
-                />
+                    }}></div>
+                    <UserBtn />
                 </div>
             )
         }

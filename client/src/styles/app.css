@@ -1,3 +1,79 @@
 body {
     font-family: 'Raleway', sans-serif;
 }
+
+/* ------------ NAV ------------*/
+
+.nav-content {
+    height: 100%;
+    width: 250px;
+    position: fixed;
+    z-index: 1;
+    top: 0px;
+    left: 0;
+    overflow-x: hidden;
+    padding: 20px 20px;
+    background: #1d2b34;
+    border: 2px solid white;
+}
+
+.nav-logo {
+    position: fixed;
+    z-index: 1;
+    left: 20px;
+    width: 70px;
+    height: 70px;
+    background: orange;
+    border: 2px solid black;
+    border-radius: 50%;
+    margin-top: 20px;
+    float: right;
+}
+
+.custom-nav-link {
+    color: white;
+    font-size: 1.2rem;
+    display: block;
+}
+
+.nav-h3 {
+    color: white;
+}
+
+.nav-user-btn {
+    position: fixed;
+    z-index: 1;
+    right: 20px;
+    background: #1d2b34;
+    color: white;
+    margin-top: 20px;
+    padding: 10px;
+    float: right;
+}
+
+.nav-user-btn:hover {
+    background: white;
+    color: black;
+    border: 2px solid #1d2b34;
+}
+
+/* ------------ HOME PAGE ------------*/
+
+.home-top-container {
+   height: 700px;
+   background-image: url('https://newswatchtv.com/wp-content/uploads/2018/03/nba.jpg');
+   background-repeat: no-repeat;
+   background-size: cover;
+}
+
+.home-top-banner {
+    width: 50%;
+    text-align: center;
+    position: relative;
+    margin: 0 auto;
+    top: 8rem;
+    color: white;
+    background-color: black;
+    opacity: .8;
+    padding: 20px;
+}

@@ -8,9 +8,9 @@ NBA API (player recent news) https://stats-prod.nba.com/wp-json/statscms/v1/roto
 
 * NBA API (player bio) http://data.nba.net/json/bios/player_201935.json
 
-NBA API (whats new --> articles) https://stats-prod.nba.com/wp-json/statscms/v1/type/whatsnew/?limit={LIMIT#}&offset=0
+NBA API (whats new --> articles) https://stats-prod.nba.com/wp-json/statscms/v1/type/whatsnew/?limit=10&offset=0
 
-NBA API (spotlight --> articles) https://stats-prod.nba.com/wp-json/statscms/v1/type/spotlight/?limit={LIMIT#}10&offset=0
+NBA API (spotlight --> articles) https://stats-prod.nba.com/wp-json/statscms/v1/type/spotlight
 
 * NBA API (home page) http://stats-prod.nba.com/wp-json/statscms/v1/homepage/
 
@@ -24,3 +24,5 @@ NBA API (roster) http://data.nba.net/prod/v1/2016/teams/1610612745/roster.json
 https://www.quora.com/Is-there-an-NBA-API-for-free-that-has-live-stats --> more apis
 
 OPEN SANS FONT https://fonts.google.com/?selection.family=Open+Sans
+
+http://nbasense.com/ ******

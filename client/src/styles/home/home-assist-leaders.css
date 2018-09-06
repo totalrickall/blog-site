@@ -1,0 +1,19 @@
+.home-section-3 {
+    background: lightgrey;
+}
+
+.section-3-inner {
+    text-align: center;
+    position: relative;
+    margin: 0 auto;
+    padding: 40px;
+}
+
+.beyond-numbers-container {
+    border: 1px solid black;
+    padding: 10px;
+}
+
+.section-3-h3 {
+    text-align: center;
+}

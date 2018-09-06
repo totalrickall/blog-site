@@ -16,7 +16,6 @@ export default class HeadlineArticles extends Component {
         <img src={image} />
         <h5 className="headline-news-h6">{title}</h5>
         <p className="headline-news-p" id="headline-news-p1">{content}</p>
-        <p className="headline-news-p" id="headline-news-p2">{content}</p>
         <p className="headline-news-p" id="headline-news-p3">{date}</p>
       </div>
     )

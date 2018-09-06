@@ -20,3 +20,18 @@ export default router
             console.error(err)
         });
     })
+    .get('/spotlight', (req, res) => {
+        let num = 10;
+        let url = `https://stats-prod.nba.com/wp-json/statscms/v1/type/spotlight`;
+
+        fetch(url, {
+            method: 'GET',
+            headers: { "Content-Type": "application/json" }
+        }).then((results) => {
+            return results.json()
+        }).then((results) => {
+            res.send(results);
+        }).catch((err) => {
+            console.error(err)
+        });
+    })
