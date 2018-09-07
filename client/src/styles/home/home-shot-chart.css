@@ -16,11 +16,12 @@
     width: 20%;
     height: 300px;
     border: 1px solid black;
+    background: white;
 }
 
 .shotchart-news-container:hover {
     cursor: pointer;
-    background: #F7F5CF;
+    background: lime;
 }
 
 .shot-chart-img {

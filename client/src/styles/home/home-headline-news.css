@@ -12,15 +12,16 @@
 
 .headline-news-container {
     text-decoration: none;
-    border: 1px solid black;
     width: 500px;
     padding: 0px 20px;
     background: #EF4C40;
     color: white;
+    border: 3px solid white;
 }
 
 .headline-news-container:hover {
     cursor: pointer;
-    background: #F7F5CF;
-    color: #EF4C40
+    background: white;
+    color: #EF4C40;
+    border: 3px solid #EF4C40;
 }
