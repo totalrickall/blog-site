@@ -34,15 +34,8 @@ export default class HeadlineArticles extends Component {
     })
     return (
       array.map((article) => {
-        let key = article.id;
-        let date = article.date;
-        let title = article.title;
-        let content = article.content;
-        let image = article.image;
-        // re-name because of the hyphen in 'headline-link'
-        let { "headline-link": headlineLink } = article.meta;
-        // now declare
-        let link = headlineLink;
+        let { key, date, title, content, image } = article;
+        let { "headline-link": link } = article.meta;
 
         return this.container(key, date, title, content, image, link)
       })

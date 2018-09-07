@@ -30,11 +30,7 @@ export default class SpotlightNewsData extends Component {
     })
     return (
       array.map((article) => {
-        let key = article.id;
-        let date = article.date;
-        let title = article.title;
-        let content = article.content;
-        let image = article.image;
+        let { key, date, title, content, image } = article;
 
         return this.slide(key, date, title, content, image);
       })

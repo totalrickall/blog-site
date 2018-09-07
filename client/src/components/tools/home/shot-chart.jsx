@@ -33,15 +33,8 @@ export default class ShotChartData extends Component {
     })
     return (
       array.map((article) => {
-        let key = article.id;
-        let date = article.date;
-        let title = article.title;
-        let content = article.content;
-        let image = article.image;
-        // re-name because of the hyphen in 'shotchart-link'
-        let { "shotchart-link": shotchartLink } = article.meta;
-        // now declare
-        let link = shotchartLink;
+        let { key, date, title, content, image } = article;
+        let { "shotchart-link": link } = article.meta;
 
         return this.container(key, date, title, content, image, link)
       })
