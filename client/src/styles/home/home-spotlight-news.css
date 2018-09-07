@@ -1,14 +1,27 @@
 .home-section-1 {
-    background: white;
-    height: 1000px;
+
 }
 
 .section-1-inner {
-    padding: 20px;
-    text-align: center;
     position: relative;
     margin: 0 auto;
-    top: 2rem;
-    height: 60rem;
-    overflow: scroll;
+}
+
+.section-1-intro {
+    height: 250px;
+    text-align: center;
+    padding: 100px
+}
+
+.section-1-title {
+    padding: 10px;
+    position: fixed;
+    color: white;
+}
+
+.section-1-date {
+    padding: 10px;
+    position: fixed;
+    color: white;
+    top: 1.5rem;
 }

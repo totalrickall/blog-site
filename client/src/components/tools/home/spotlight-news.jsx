@@ -1,22 +1,18 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
+import ReactSiema from 'react-siema'
 
 export default class SpotlightNewsData extends Component {
 
-  select() {
-    alert('Something...')
-  }
+  slide(key, date, title, content, image) {
+    const Slide = (props) => <Fragment>
+      <span className="section-1-title">{title}</span>
+      <span className="section-1-date">{date}</span>
+      <img {...props} alt="slide" />
+    </Fragment>
 
-
-  container(key, date, title, content, image) {
     return (
-      <div className="spotlight-news-container" onClick={() => {
-        this.select();
-      }} key={key}>
-        <img src={image} />
-        <h5 className="spotlight-news-h6">{title}</h5>
-        <p className="spotlight-news-p" id="spotlight-news-p1">{content}</p>
-        <p className="spotlight-news-p" id="spotlight-news-p3">{date}</p>
-      </div>
+      <Slide src={image}  key={key}/>
+
     )
   };
 
@@ -40,17 +36,24 @@ export default class SpotlightNewsData extends Component {
         let content = article.content;
         let image = article.image;
 
-        return this.container(key, date, title, content, image)
+        return this.slide(key, date, title, content, image);
       })
     )
   };
 
   render() {
+    const settings = {
+      duration: 2000,
+      draggable: true,
+      loop: true
+    }
     return (
-      <div className="home-section-1" id="list-item-1" >
+      <div className="home-section-1">
         <div className="section-1-inner">
-          <h3>Spotlight</h3>
-          {this.spotlightContent()}
+          <div className="section-1-intro">The NBA provides an enormous amount of undocumented filterable public data via URL endpoints on their websites. This includes statistical data as well as general/historical information about the league, its teams, players, and more. Most of this information is returned as JSON data, but there are also endpoints that retrieve data in XML and PDF formats.</div>
+          <ReactSiema {...settings}>
+            {this.spotlightContent()}
+          </ReactSiema>
         </div>
       </div>
     )
