@@ -173,6 +173,7 @@ export default class AllPlayersPage extends Component {
     return (
       <div className="players-page-container">
         <Block />
+        <h5>Total: #</h5>
         {this.playersContent()}
         <ContactInfo />
       </div>
