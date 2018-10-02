@@ -117,7 +117,7 @@ export default class HomePage extends Component {
           margin: '0 auto',
           top: '8rem'
         }}>
-          <h3>Join millions of others... DERP</h3>
+          <h3>Join millions of others</h3>
           <p>Whether sharing your expertise, breaking news, or whatever’s on your mind, you’re in good company on Blogger. Sign up to discover why millions of people have published their passions here.</p>
           <br />
           <a className="sign-up-btn" href="/sign-up" style={{

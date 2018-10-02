@@ -27,10 +27,10 @@ export default class Nav extends Component {
         if (this.state.isNav) {
 
             let link1 = `/`;
-            let link2 = `list-item-1`;
+            let link2 = `/about`;
             let link3 = `/players`;
             let link4 = `/view-all`;
-            let link5 = `#list-item-3`;
+            let link5 = `#list-item-5`;
 
             let description1 = `Home`;
             let description2 = `About`;
