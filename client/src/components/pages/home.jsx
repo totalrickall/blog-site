@@ -26,6 +26,7 @@ export default class HomePage extends Component {
   }
 
   componentDidMount() {
+    // check user login
     UserService.checkLogin()
       .then((loggedIn) => {
         if (loggedIn) {
@@ -36,7 +37,7 @@ export default class HomePage extends Component {
       }).catch((err) => {
         console.error(err);
       });
-
+    // all NBA news articles
     NewsService.all().then((data) => {
       //console.log(data)
       this.setState({
@@ -45,6 +46,7 @@ export default class HomePage extends Component {
     }).catch((err) => {
       console.error(err)
     });
+    // all NBA spotlight articles
     NewsService.readSpotlight().then((data) => {
       //console.log(data)
       this.setState({
@@ -105,7 +107,7 @@ export default class HomePage extends Component {
   signUp() {
     // 6
     return (
-      <div className="home-section-5" id="list-item-5" style={{
+      <div className="home-section-6" id="list-item-6" style={{
         height: '450px',
         background: '#1d2b34',
         color: 'white'

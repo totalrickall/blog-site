@@ -30,7 +30,7 @@ export default class Nav extends Component {
             let link2 = `/about`;
             let link3 = `/players`;
             let link4 = `/view-all`;
-            let link5 = `#list-item-5`;
+            let link5 = `#list-item-6`;
 
             let description1 = `Home`;
             let description2 = `About`;
